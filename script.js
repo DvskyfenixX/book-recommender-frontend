@@ -1,6 +1,6 @@
 function buscar() {
   const libro = document.getElementById("libro").value;
-  fetch("https://<TU_BACKEND>.onrender.com/recomendar", {
+  fetch("https://book-recommender-backend.onrender.com/recomendar", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -14,6 +14,5 @@ function buscar() {
       html += `<p><b>${[...r.consequents].join(", ")}</b> — Confianza: ${r.confidence.toFixed(2)}</p>`;
     });
     document.getElementById("resultados").innerHTML = html;
-    document.getElementById("grafo").src = "data:image/png;base64," + data.grafo;
   });
 }
